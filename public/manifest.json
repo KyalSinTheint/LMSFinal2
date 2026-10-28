@@ -1,0 +1,23 @@
+{
+  "name": "KBZLife Employee Learning Portal",
+  "short_name": "KBZLife LMS",
+  "description": "Internal Employee Learning Portal for KBZLife Insurance featuring Our Company overview, CEO motto, vision, mission, purpose, core values, and aspirations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#003366",
+  "theme_color": "#003366",
+  "icons": [
+    {
+      "src": "/assets/aistudio/KBZ_Logo_28e9d8fb.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/aistudio/KBZ_Logo_28e9d8fb.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

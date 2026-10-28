@@ -1,0 +1,594 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    /* Official KBZLIFE Brand Theme */
+    --kbz-brand-blue: #176B98;
+    --kbz-sky-blue: #25A9D2;
+    --kbz-bg-base: #F3F8FB;
+    --kbz-grey-accent: #737373;
+
+    /* Semantic Theme Aliases */
+    --kbz-blue-primary: #176B98;
+    --kbz-blue-secondary: #135A80;
+    --kbz-blue-accent: #25A9D2;
+    --kbz-blue-pale: #F3F8FB;
+    --kbz-navy-dark: #0F3E57;
+    --kbz-border-subtle: #E2E8F0;
+  }
+
+  :root.dark, html.dark {
+    --kbz-bg-base: #0B131E;
+    --kbz-border-subtle: #1E293B;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F3F8FB;
+    color: #1E293B;
+    font-family: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  html.dark {
+    background-color: #0B131E;
+    color: #F8FAFC;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #F3F8FB;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  html.dark body {
+    background-color: #0B131E;
+    color: #F8FAFC;
+  }
+
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Myanmar font support */
+  .font-myanmar {
+    font-family: 'Noto Sans Myanmar', 'Manrope', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Visible focus ring for accessibility */
+  *:focus-visible {
+    outline: 2px solid #176B98;
+    outline-offset: 2px;
+  }
+}
+
+/* Light minimalist pattern backdrop styles based on #F3F8FB & Dark #0B131E */
+.bg-light-blue-pattern {
+  background-color: #F3F8FB;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(37, 169, 210, 0.06) 0%, transparent 60%),
+    linear-gradient(to right, rgba(23, 107, 152, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 107, 152, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+html.dark .bg-light-blue-pattern,
+.dark .bg-light-blue-pattern {
+  background-color: #0B131E;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(37, 169, 210, 0.12) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+.bg-light-blue-dots {
+  background-color: #F3F8FB;
+  background-image: 
+    radial-gradient(circle at 100% 50%, rgba(37, 169, 210, 0.05) 0%, transparent 50%),
+    radial-gradient(rgba(23, 107, 152, 0.06) 1.25px, transparent 1.25px);
+  background-size: 100% 100%, 24px 24px;
+}
+
+html.dark .bg-light-blue-dots,
+.dark .bg-light-blue-dots {
+  background-color: #0B131E;
+  background-image: 
+    radial-gradient(circle at 100% 50%, rgba(37, 169, 210, 0.08) 0%, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1.25px, transparent 1.25px);
+  background-size: 100% 100%, 24px 24px;
+}
+
+.bg-light-blue-subtle {
+  background-color: #F3F8FB;
+  background-image: 
+    radial-gradient(rgba(23, 107, 152, 0.045) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+}
+
+html.dark .bg-light-blue-subtle,
+.dark .bg-light-blue-subtle {
+  background-color: #0B131E;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.05) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+}
+
+.bg-ambient-luminous {
+  background-color: #F3F8FB;
+  background-image: 
+    radial-gradient(120% 90% at 50% 0%, #EBF3F8 0%, #F0F6FA 45%, #F3F8FB 100%),
+    linear-gradient(to right, rgba(23, 107, 152, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 107, 152, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+html.dark .bg-ambient-luminous,
+.dark .bg-ambient-luminous {
+  background-color: #0B131E;
+  background-image: 
+    radial-gradient(120% 90% at 50% 0%, #132235 0%, #0F1A29 45%, #0B131E 100%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+.bg-ambient-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(37, 169, 210, 0.08) 0%, rgba(23, 107, 152, 0.04) 50%, transparent 80%);
+}
+
+html.dark .bg-ambient-glow,
+.dark .bg-ambient-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(37, 169, 210, 0.16) 0%, rgba(23, 107, 152, 0.08) 50%, transparent 80%);
+}
+
+.shadow-card-elevated {
+  box-shadow: 0 4px 20px -2px rgba(23, 107, 152, 0.06), 0 2px 6px -1px rgba(23, 107, 152, 0.03);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 16px 36px -4px rgba(23, 107, 152, 0.09), 0 4px 12px -2px rgba(23, 107, 152, 0.04);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================================
+   DARK MODE KBZLIFE BRAND BLUE PALETTE & DESIGN TOKENS
+   Standardized color system:
+     - Base Canvas: #0B131E
+     - Navigation / Headers / Toolbars: #0E2035 / rgba(14, 32, 53, 0.95)
+     - Cards / Panels / Modals / Dropdowns: #10243C
+     - Nested Wells / Section Containers / List Items: #153252 / #0E1F33
+     - Elevated Chips / Active Pills: #183B60
+     - Interactive Inputs: #122842 with #1E426D borders
+     - Brand Borders: #1E426D (subtle inner: #173454)
+     - Brand Text: Primary #F8FAFC, Secondary #CBD5E1, Muted #94A3B8, Accent #38BDF8
+   Maintains Light Mode completely unchanged.
+   ========================================================================= */
+
+html.dark,
+.dark {
+  color-scheme: dark;
+}
+
+/* 1. Base card, modal, and panel elements with bg-white in dark mode */
+html.dark .bg-white:not([data-keep-light="true"]),
+.dark .bg-white:not([data-keep-light="true"]) {
+  background-color: #10243C !important;
+  color: #F8FAFC;
+}
+
+/* Semi-transparent white variants */
+html.dark .bg-white\/95,
+.dark .bg-white\/95 {
+  background-color: rgba(16, 36, 60, 0.95) !important;
+  color: #F8FAFC;
+}
+
+html.dark .bg-white\/90,
+.dark .bg-white\/90 {
+  background-color: rgba(16, 36, 60, 0.9) !important;
+  color: #F8FAFC;
+}
+
+html.dark .bg-white\/80,
+.dark .bg-white\/80 {
+  background-color: rgba(16, 36, 60, 0.8) !important;
+  color: #F8FAFC;
+}
+
+html.dark .bg-white\/70,
+.dark .bg-white\/70,
+html.dark .bg-white\/60,
+.dark .bg-white\/60 {
+  background-color: rgba(16, 36, 60, 0.65) !important;
+  color: #F8FAFC;
+}
+
+/* 2. Light gray & slate background variants in dark mode */
+html.dark .bg-slate-50,
+.dark .bg-slate-50,
+html.dark .bg-gray-50,
+.dark .bg-gray-50,
+html.dark .bg-zinc-50,
+.dark .bg-zinc-50 {
+  background-color: #0E1F33 !important;
+}
+
+html.dark .bg-slate-50\/50,
+.dark .bg-slate-50\/50,
+html.dark .bg-slate-50\/70,
+.dark .bg-slate-50\/70,
+html.dark .bg-slate-50\/80,
+.dark .bg-slate-50\/80 {
+  background-color: #122842 !important;
+}
+
+html.dark .bg-slate-100,
+.dark .bg-slate-100,
+html.dark .bg-gray-100,
+.dark .bg-gray-100,
+html.dark .bg-zinc-100,
+.dark .bg-zinc-100 {
+  background-color: #153252 !important;
+}
+
+html.dark .bg-slate-200,
+.dark .bg-slate-200,
+html.dark .bg-gray-200,
+.dark .bg-gray-200,
+html.dark .bg-zinc-200,
+.dark .bg-zinc-200 {
+  background-color: #183B60 !important;
+}
+
+html.dark .bg-slate-200\/90,
+.dark .bg-slate-200\/90,
+html.dark .bg-slate-200\/70,
+.dark .bg-slate-200\/70 {
+  background-color: #1E426D !important;
+}
+
+html.dark .bg-slate-300,
+.dark .bg-slate-300 {
+  background-color: #1E426D !important;
+}
+
+/* 3. Pale blue & custom portal background aliases in dark mode */
+html.dark .bg-\[\#F3F8FB\],
+.dark .bg-\[\#F3F8FB\] {
+  background-color: #0B131E !important;
+}
+
+html.dark .bg-\[\#F3F8FB\]\/95,
+.dark .bg-\[\#F3F8FB\]\/95 {
+  background-color: rgba(11, 19, 30, 0.95) !important;
+}
+
+html.dark .bg-\[\#EBF5FB\],
+.dark .bg-\[\#EBF5FB\],
+html.dark .bg-\[\#EDF4FB\],
+.dark .bg-\[\#EDF4FB\],
+html.dark .bg-\[\#F0EFFE\],
+.dark .bg-\[\#F0EFFE\],
+html.dark .bg-\[\#F1F5F9\],
+.dark .bg-\[\#F1F5F9\],
+html.dark .bg-\[\#F8FAFC\],
+.dark .bg-\[\#F8FAFC\] {
+  background-color: #0E1F33 !important;
+}
+
+/* 4. Map Tailwind dark slate utility classes to rich KBZ Brand Blue shades */
+html.dark .dark\:bg-slate-900,
+.dark .dark\:bg-slate-900 {
+  background-color: #0E2035 !important;
+}
+
+html.dark .dark\:bg-slate-900\/95,
+.dark .dark\:bg-slate-900\/95 {
+  background-color: rgba(14, 32, 53, 0.95) !important;
+}
+
+html.dark .dark\:bg-slate-800,
+.dark .dark\:bg-slate-800 {
+  background-color: #10243C !important;
+}
+
+html.dark .dark\:bg-slate-800\/60,
+.dark .dark\:bg-slate-800\/60 {
+  background-color: rgba(16, 36, 60, 0.6) !important;
+}
+
+html.dark .dark\:bg-slate-800\/50,
+.dark .dark\:bg-slate-800\/50 {
+  background-color: rgba(16, 36, 60, 0.5) !important;
+}
+
+html.dark .dark\:bg-slate-700,
+.dark .dark\:bg-slate-700 {
+  background-color: #153252 !important;
+}
+
+html.dark .dark\:bg-slate-950,
+.dark .dark\:bg-slate-950 {
+  background-color: #070E17 !important;
+}
+
+/* 5. Borders in dark mode: subtle KBZ dark blue borders */
+html.dark .border-slate-200,
+.dark .border-slate-200,
+html.dark .border-slate-100,
+.dark .border-slate-100,
+html.dark .border-slate-300,
+.dark .border-slate-300,
+html.dark .border-gray-200,
+.dark .border-gray-200,
+html.dark .border-gray-100,
+.dark .border-gray-100 {
+  border-color: #1E426D !important;
+}
+
+html.dark .border-slate-200\/90,
+.dark .border-slate-200\/90,
+html.dark .border-slate-200\/80,
+.dark .border-slate-200\/80,
+html.dark .border-slate-200\/70,
+.dark .border-slate-200\/70,
+html.dark .border-slate-200\/60,
+.dark .border-slate-200\/60 {
+  border-color: rgba(30, 66, 109, 0.75) !important;
+}
+
+html.dark .dark\:border-slate-800,
+.dark .dark\:border-slate-800,
+html.dark .dark\:border-slate-700,
+.dark .dark\:border-slate-700 {
+  border-color: #1E426D !important;
+}
+
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #173454 !important;
+}
+
+/* 6. Notification & Status Alert boxes in Dark Mode */
+html.dark .bg-amber-50,
+.dark .bg-amber-50 {
+  background-color: #182B3D !important;
+  border-color: #92400E !important;
+  color: #FEF08A !important;
+}
+
+html.dark .bg-emerald-50,
+.dark .bg-emerald-50 {
+  background-color: #0E2B35 !important;
+  border-color: #047857 !important;
+  color: #A7F3D0 !important;
+}
+
+html.dark .bg-red-50,
+.dark .bg-red-50,
+html.dark .bg-rose-50,
+.dark .bg-rose-50 {
+  background-color: #2D1822 !important;
+  border-color: #991B1B !important;
+  color: #FECDD3 !important;
+}
+
+html.dark .bg-blue-50,
+.dark .bg-blue-50,
+html.dark .bg-sky-50,
+.dark .bg-sky-50 {
+  background-color: #0E243D !important;
+  border-color: #1D4ED8 !important;
+  color: #BAE6FD !important;
+}
+
+html.dark .bg-purple-50,
+.dark .bg-purple-50 {
+  background-color: #241A38 !important;
+  border-color: #6B21A8 !important;
+  color: #E9D5FF !important;
+}
+
+/* Metric & pill tag backgrounds */
+html.dark .bg-amber-100,
+.dark .bg-amber-100 {
+  background-color: #2D230A !important;
+  border-color: #854D0E !important;
+  color: #FDE047 !important;
+}
+
+html.dark .bg-emerald-100,
+.dark .bg-emerald-100 {
+  background-color: #06281E !important;
+  border-color: #065F46 !important;
+  color: #6EE7B7 !important;
+}
+
+html.dark .bg-purple-100,
+.dark .bg-purple-100 {
+  background-color: #241A38 !important;
+  border-color: #6B21A8 !important;
+  color: #E9D5FF !important;
+}
+
+html.dark .bg-blue-100,
+.dark .bg-blue-100,
+html.dark .bg-sky-100,
+.dark .bg-sky-100 {
+  background-color: #0C2840 !important;
+  border-color: #0369A1 !important;
+  color: #7DD3FC !important;
+}
+
+html.dark .bg-red-100,
+.dark .bg-red-100 {
+  background-color: #2E1218 !important;
+  border-color: #9F1239 !important;
+  color: #FDA4AF !important;
+}
+
+/* 7. Forms: Inputs, Textareas, Selects in Dark Mode */
+html.dark input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([data-keep-light="true"]),
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([data-keep-light="true"]),
+html.dark textarea:not([data-keep-light="true"]),
+.dark textarea:not([data-keep-light="true"]),
+html.dark select:not([data-keep-light="true"]),
+.dark select:not([data-keep-light="true"]) {
+  background-color: #122842 !important;
+  border-color: #1E426D !important;
+  color: #F8FAFC !important;
+}
+
+html.dark input:focus,
+.dark input:focus,
+html.dark textarea:focus,
+.dark textarea:focus,
+html.dark select:focus,
+.dark select:focus {
+  background-color: #153252 !important;
+  border-color: #25A9D2 !important;
+  outline-color: #25A9D2 !important;
+}
+
+html.dark select option,
+.dark select option {
+  background-color: #10243C !important;
+  color: #F8FAFC !important;
+}
+
+html.dark input::placeholder,
+.dark input::placeholder,
+html.dark textarea::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+/* 8. Text adjustments for dark mode readability where dark:text wasn't set */
+html.dark .text-slate-900:not([data-keep-text="true"]),
+.dark .text-slate-900:not([data-keep-text="true"]),
+html.dark .text-slate-800:not([data-keep-text="true"]),
+.dark .text-slate-800:not([data-keep-text="true"]) {
+  color: #F8FAFC;
+}
+
+html.dark .text-slate-700:not([data-keep-text="true"]),
+.dark .text-slate-700:not([data-keep-text="true"]) {
+  color: #E2E8F0;
+}
+
+html.dark .text-slate-600:not([data-keep-text="true"]),
+.dark .text-slate-600:not([data-keep-text="true"]) {
+  color: #CBD5E1;
+}
+
+html.dark .text-slate-500:not([data-keep-text="true"]),
+.dark .text-slate-500:not([data-keep-text="true"]) {
+  color: #94A3B8;
+}
+
+/* 9. Dropdown menus & Popovers in Dark Mode */
+html.dark [role="menu"],
+.dark [role="menu"],
+html.dark [role="listbox"],
+.dark [role="listbox"] {
+  background-color: #10243C !important;
+  border-color: #1E426D !important;
+}
+
+/* 10. Tables in Dark Mode */
+html.dark table thead,
+.dark table thead {
+  background-color: #0E2035 !important;
+  border-color: #1E426D !important;
+}
+
+html.dark table thead tr th,
+.dark table thead tr th {
+  background-color: #0E2035 !important;
+  color: #38BDF8 !important;
+  border-color: #1E426D !important;
+}
+
+html.dark table tbody,
+.dark table tbody {
+  background-color: #10243C !important;
+}
+
+html.dark table tbody tr,
+.dark table tbody tr {
+  background-color: #10243C !important;
+  border-color: #173454 !important;
+  color: #E2E8F0 !important;
+}
+
+html.dark table tbody tr td,
+.dark table tbody tr td {
+  border-color: #173454 !important;
+}
+
+html.dark table tbody tr:hover,
+.dark table tbody tr:hover {
+  background-color: rgba(23, 107, 152, 0.22) !important;
+}
+
+/* 11. Dark mode gradients with light stops override */
+html.dark .to-white,
+.dark .to-white {
+  --tw-gradient-to: #10243C var(--tw-gradient-to-position) !important;
+}
+
+html.dark .via-white,
+.dark .via-white {
+  --tw-gradient-stops: var(--tw-gradient-from), #10243C var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+/* 12. Dark Mode Scrollbars */
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0B131E;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E426D;
+  border-radius: 9999px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #25A9D2;
+}
+

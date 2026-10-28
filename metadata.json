@@ -1,0 +1,6 @@
+{
+  "name": "KBZLife Employee Learning Portal",
+  "description": "Internal Employee Learning Portal for KBZLife Insurance featuring Our Company overview, CEO motto, vision, mission, purpose, core values, and aspirations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
