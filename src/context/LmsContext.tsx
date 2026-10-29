@@ -1048,6 +1048,90 @@ export const LmsProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
             refreshData();
           }
         )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'courses' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'channels' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'course_enrollments' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'channel_access' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'admin_audit_logs' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'hod_motto' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'ld_team_members' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'company_bulletins' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'license_chapters' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'license_quizzes' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'license_quiz_attempts' },
+          () => {
+            refreshData();
+          }
+        )
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'skill_quiz_attempts' },
+          () => {
+            refreshData();
+          }
+        )
         .subscribe();
 
       return () => {
